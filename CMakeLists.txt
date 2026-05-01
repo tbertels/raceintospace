@@ -30,6 +30,16 @@ if("${lc_CMAKE_BUILD_TYPE}" STREQUAL "debug")
 	add_definitions(-DDEBUG)
 endif("${lc_CMAKE_BUILD_TYPE}" STREQUAL "debug")
 
+find_program(CCACHE_FOUND "ccache")
+set(CCACHE_SUPPORT OFF CACHE BOOL "Enable ccache support")
+if (CCACHE_FOUND AND CCACHE_SUPPORT)
+    message(STATUS "Using ccache to speed up incremental builds")
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "ccache")
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK "ccache")
+else()
+    message(STATUS "ccache not found or disabled — incremental builds will be slower")
+endif()
+
 add_subdirectory(src)
 
 # Distribution
