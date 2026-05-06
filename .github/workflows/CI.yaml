@@ -24,12 +24,18 @@ jobs:
             preset: windows-vcpkg
             buildDir: build/release
             # package: windows-release
+          - os: windows
+            preset: windows-debug
+            buildDir: build/debug
           - os: ubuntu
             preset: linux-vcpkg
             buildDir: build/debug
           - os: ubuntu
             preset: linux-release
             buildDir: build/release
+          - os: ubuntu
+            preset: linux-debug
+            buildDir: build/debug
           - os: macos
             preset: macos-vcpkg
             buildDir: build/debug
