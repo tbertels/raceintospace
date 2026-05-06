@@ -144,7 +144,10 @@
         {
             "name": "windows-debug",
             "displayName": "Windows debug build",
-            "configurePreset": "windows-debug"
+            "configurePreset": "windows-debug",
+            "targets": [
+                "all", "but2png", "data_decoder", "mkmovie", "mknews", "news2png"
+            ]
         },
         {
             "name": "linux-release",
@@ -154,7 +157,10 @@
         {
             "name": "linux-debug",
             "displayName": "Linux debug build",
-            "configurePreset": "linux-debug"
+            "configurePreset": "linux-debug",
+            "targets": [
+                "all", "but2png", "data_decoder", "mkmovie", "mknews", "news2png"
+            ]
         },
         {
             "name": "linux-vcpkg",
