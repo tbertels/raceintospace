@@ -1862,8 +1862,8 @@ void IStat(char plr)
  */
 void DispIt(const DisplayContext& dctx, int x1, int y1, int x2, int y2, int s, int t)
 {
-    int w = x2 - x1 + 1;
-    int h = y2 - y1 + 1;
+    unsigned int w = x2 - x1 + 1;
+    unsigned int h = y2 - y1 + 1;
     display::LegacySurface local{w, h};
     local.copyFrom(dctx.intel.get(), x1, y1, x2, y2, 0, 0);
     local.setTransparentColor(0);
